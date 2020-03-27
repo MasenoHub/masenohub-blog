@@ -17,4 +17,12 @@ class Category extends Model
     protected $fillable = [
         'name',
     ];
+
+    /**
+     * Get the posts belonging to the category.
+     */
+    public function posts()
+    {
+        return $this->hasMany('App\Post');
+    }
 }
