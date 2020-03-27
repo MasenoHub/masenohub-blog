@@ -46,4 +46,12 @@ class User extends \TCG\Voyager\Models\User
     {
         return $this->hasMany('App\Post');
     }
+
+    /**
+     * Get the comments belonging to the user.
+     */
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
 }
