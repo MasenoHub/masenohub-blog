@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Comment extends Model
+class Vote extends Model
 {
     use SoftDeletes;
 
@@ -15,27 +15,19 @@ class Comment extends Model
      * @var array
      */
     protected $fillable = [
-        'text'
+        'vote'
     ];
 
     /**
-     * Get the votes belonging to the comment.
+     * Get the comment that the vote belongs to.
      */
-    public function votes()
+    public function commment()
     {
-        return $this->hasMany('App\Votes');
+        return $this->belongsTo('App\Comment');
     }
 
     /**
-     * Get the post that the comment belongs to.
-     */
-    public function post()
-    {
-        return $this->belongsTo('App\Post');
-    }
-
-    /**
-     * Get the user that the comment belongs to.
+     * Get the user that the vote belongs to.
      */
     public function user()
     {

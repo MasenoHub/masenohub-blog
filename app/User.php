@@ -62,4 +62,12 @@ class User extends \TCG\Voyager\Models\User
     {
         return $this->hasMany('App\Reaction');
     }
+
+    /**
+     * Get the votes belonging to the user.
+     */
+    public function votes()
+    {
+        return $this->hasMany('App\Votes');
+    }
 }
