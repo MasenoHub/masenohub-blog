@@ -27,6 +27,14 @@ class Post extends Model
     }
 
     /**
+     * Get the reactions belonging to the user.
+     */
+    public function reactions()
+    {
+        return $this->hasMany('App\Reaction');
+    }
+
+    /**
      * Get the user that the post belongs to.
      */
     public function user()

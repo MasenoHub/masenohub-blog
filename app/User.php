@@ -40,6 +40,14 @@ class User extends \TCG\Voyager\Models\User
     ];
 
     /**
+     * Get the comments belonging to the user.
+     */
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
+
+    /**
      * Get the posts belonging to the user.
      */
     public function posts()
@@ -48,10 +56,10 @@ class User extends \TCG\Voyager\Models\User
     }
 
     /**
-     * Get the comments belonging to the user.
+     * Get the reactions belonging to the user.
      */
-    public function comments()
+    public function reactions()
     {
-        return $this->hasMany('App\Comment');
+        return $this->hasMany('App\Reaction');
     }
 }
