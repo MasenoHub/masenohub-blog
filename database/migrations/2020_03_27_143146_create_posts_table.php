@@ -16,10 +16,11 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('subject', 255);
-            $table->string('summary')->default('');
-            $table->string('content')->default('');
-            $table->string('overlay')->default('');
+            $table->text('summary')->default('');
+            $table->longText('content')->default('');
+            $table->string('overlay', 255)->default('');
             $table->boolean('published')->default(false);
+            $table->unsignedBigInteger('views')->default(0);
             $table->timestamps();
             $table->softDeletes();
             $table->foreignId('category_id')

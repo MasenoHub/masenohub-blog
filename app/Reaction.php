@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Reaction extends Model
 {
     use SoftDeletes;
+
+    const BOOKMARK = 'bookmark';
+    const FAVOURITE = 'favourite';
     
     /**
      * Get the post that the reaction belongs to.

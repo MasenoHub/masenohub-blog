@@ -12,6 +12,9 @@ class User extends \TCG\Voyager\Models\User
     use Notifiable;
     use SoftDeletes;
 
+    const AUTHOR = 'author';
+    const READER = 'reader';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -48,7 +51,7 @@ class User extends \TCG\Voyager\Models\User
     }
 
     /**
-     * Get the posts belonging to the user.
+     * Get the posts belonging to the user. 
      */
     public function posts()
     {

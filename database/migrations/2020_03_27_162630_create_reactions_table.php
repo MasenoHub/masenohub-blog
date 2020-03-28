@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Reaction;
 
 class CreateReactionsTable extends Migration
 {
@@ -15,7 +16,7 @@ class CreateReactionsTable extends Migration
     {
         Schema::create('reactions', function (Blueprint $table) {
             $table->id();
-            $table->string('reaction');
+            $table->enum('reaction', [Reaction::BOOKMARK, Reaction::FAVOURITE]);
             $table->timestamps();
             $table->softDeletes();
             $table->foreignId('post_id')
