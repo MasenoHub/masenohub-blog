@@ -7,8 +7,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Tags\HasTags;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
+use Spatie\Feed\Feedable;
+use Spatie\Feed\FeedItem;
 
-class Post extends Model
+class Post extends Model implements Feedable
 {
     use SoftDeletes;
     use HasTags;
@@ -75,5 +77,21 @@ class Post extends Model
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    public function toFeedItem()
+    {
+        return FeedItem::create()
+            ->id($this->id)
+            ->title($this->subject)
+            ->summary($this->summary)
+            ->updated($this->updated_at)
+            ->link($this->slug) // TODO Full URL, or 'link' accessor.
+            ->author($this->user()->name); // TODO Name or Email?
+    }
+
+    public static function getFeedItems()
+    {
+        return Post::all();
     }
 }
