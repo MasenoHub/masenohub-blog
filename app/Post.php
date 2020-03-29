@@ -9,8 +9,10 @@ use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
+use Spatie\Searchable\Searchable;
+use Spatie\Searchable\SearchResult;
 
-class Post extends Model implements Feedable
+class Post extends Model implements Feedable, Searchable
 {
     use SoftDeletes;
     use HasTags;
@@ -79,6 +81,21 @@ class Post extends Model implements Feedable
         return 'slug';
     }
 
+    /**
+     * Get the post's URL.
+     *
+     * @return string
+     */
+    public function getUrlAttribute()
+    {
+        return route('read', $this->slug); // TODO 'read' route
+    }
+
+    /**
+     * Get a FeedItem from the model.
+     *
+     * @return FeedItem
+     */
     public function toFeedItem()
     {
         return FeedItem::create()
@@ -86,12 +103,31 @@ class Post extends Model implements Feedable
             ->title($this->subject)
             ->summary($this->summary)
             ->updated($this->updated_at)
-            ->link($this->slug) // TODO Full URL, or 'link' accessor.
-            ->author($this->user()->name); // TODO Name or Email?
+            ->link($this->url)
+            ->author($this->user()->email);
     }
 
+    /**
+     * Get the items to be included in the feed.
+     *
+     * @return string
+     */
     public static function getFeedItems()
     {
-        return Post::all();
+        return Post::where('published', true)->get();
     }
+
+    /**
+     * Get the search result fields.
+     *
+     * @return SearchResult
+     */
+    public function getSearchResult(): SearchResult
+     {
+        return new SearchResult(
+            $this,
+            $this->subject,
+            $this->url
+         );
+     }
 }

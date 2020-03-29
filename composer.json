@@ -17,6 +17,7 @@
         "laravel/ui": "^2.0",
         "spatie/laravel-cookie-consent": "^2.12",
         "spatie/laravel-feed": "^2.6",
+        "spatie/laravel-searchable": "^1.6",
         "spatie/laravel-sluggable": "^2.4",
         "spatie/laravel-tags": "^2.6",
         "tcg/voyager": "1.4.*"
