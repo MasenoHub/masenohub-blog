@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fa79cd59518f52d63aad37c279b02038",
+    "content-hash": "36320ee48caf8a77ad9f0c8de2c1a14e",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -3059,6 +3059,54 @@
                 "sortable"
             ],
             "time": "2020-03-02T19:45:44+00:00"
+        },
+        {
+            "name": "spatie/laravel-sluggable",
+            "version": "2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-sluggable.git",
+                "reference": "d01fe1b70fcea0d40f089199092597497172b990"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-sluggable/zipball/d01fe1b70fcea0d40f089199092597497172b990",
+                "reference": "d01fe1b70fcea0d40f089199092597497172b990",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^7.0",
+                "illuminate/support": "^7.0",
+                "php": "^7.4"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Sluggable\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Generate slugs when saving Eloquent models",
+            "homepage": "https://github.com/spatie/laravel-sluggable",
+            "keywords": [
+                "laravel-sluggable",
+                "spatie"
+            ],
+            "time": "2020-03-03T09:55:53+00:00"
         },
         {
             "name": "spatie/laravel-tags",
