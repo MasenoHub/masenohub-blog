@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
 use Spatie\Tags\HasTags;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
@@ -88,7 +89,18 @@ class Post extends Model implements Feedable, Searchable
      */
     public function getUrlAttribute()
     {
-        return route('read', $this->slug); // TODO 'read' route
+        return route('read', $this->slug);
+    }
+
+    /**
+     * Get the post's ownership attribute.
+     *
+     * @return bool
+     */
+    function getOwnedAttribute()
+    {
+        if (!!Auth::user()) return Auth::id() === $this->user_id;
+        return false;
     }
 
     /**
