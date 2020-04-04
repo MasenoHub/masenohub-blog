@@ -220,12 +220,6 @@ body .demo-blog {
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
 }
-.demo-blog .on-the-road-again .mdl-card__media {
-  background-image: url('images/road.jpg');
-}
-.demo-blog .shopping .mdl-card__media {
-  background-image: url('images/shopping.jpg');
-}
 .demo-blog .demo-blog__posts > .demo-nav {
   margin: 12px 15px;
   display: -webkit-flex;
@@ -441,13 +435,9 @@ body .demo-blog {
   overflow: visible;
   z-index: 10;
 }
-.demo-blog .amazing .mdl-card__title {
-  background-color: #263238;
-}
 .demo-blog .minilogo {
   width: 44px;
   height: 44px;
-  background-image: url('images/avatar.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 50%;

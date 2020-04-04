@@ -10,13 +10,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script defer src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/lodash@4.17.15"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <!-- TODO: Add custom JS -->
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
@@ -32,6 +25,12 @@
 
 <body>
     @yield('content')
+
+    @include('cookieConsent::index')
+    
+    <!-- Scripts -->
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>

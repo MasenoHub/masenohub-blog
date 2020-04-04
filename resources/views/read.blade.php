@@ -15,7 +15,7 @@
                     <h3>On the road again</h3>
                 </div>
                 <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-                    <div class="minilogo"></div>
+                    <div class="minilogo" style="background-image: url('images/avatar.png')"></div>
                     <div>
                         <strong>The Newist</strong>
                         <span>2 days ago</span>
@@ -146,7 +146,5 @@
     </main>
 
     <div class="mdl-layout__obfuscator"></div>
-
-    @include('cookieConsent::index')
 </div>
 @endsection

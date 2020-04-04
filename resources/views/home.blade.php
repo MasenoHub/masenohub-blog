@@ -10,13 +10,14 @@
                     <h3><a href="entry.html">Coffee Pic</a></h3>
                 </div>
                 <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-                    <div class="minilogo"></div>
+                    <div class="minilogo" style="background-image: url('images/avatar.png')"></div>
                     <div>
                         <strong>The Newist</strong>
                         <span>2 days ago</span>
                     </div>
                 </div>
             </div>
+
             <div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
                 <button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent">
                     <i class="material-icons mdl-color-text--white" role="presentation">add</i>
@@ -42,56 +43,23 @@
                     </button>
                 </div>
             </div>
-            <div class="mdl-card on-the-road-again mdl-cell mdl-cell--12-col">
-                <div class="mdl-card__media mdl-color-text--grey-50">
-                    <h3><a href="entry.html">On the road again</a></h3>
-                </div>
-                <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
-                    Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.
-                </div>
-                <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-                    <div class="minilogo"></div>
-                    <div>
-                        <strong>The Newist</strong>
-                        <span>2 days ago</span>
-                    </div>
-                </div>
-            </div>
-            <div class="mdl-card amazing mdl-cell mdl-cell--12-col">
-                <div class="mdl-card__title mdl-color-text--grey-50">
-                    <h3 class="quote"><a href="entry.html">I couldn’t take any pictures but this was an amazing thing…</a></h3>
-                </div>
-                <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                    Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.
-                </div>
-                <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-                    <div class="minilogo"></div>
-                    <div>
-                        <strong>The Newist</strong>
-                        <span>2 days ago</span>
-                    </div>
-                </div>
-            </div>
-            <div class="mdl-card shopping mdl-cell mdl-cell--12-col">
-                <div class="mdl-card__media mdl-color-text--grey-50">
-                    <h3><a href="entry.html">Shopping</a></h3>
-                </div>
-                <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                    Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.
-                </div>
-                <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-                    <div class="minilogo"></div>
-                    <div>
-                        <strong>The Newist</strong>
-                        <span>2 days ago</span>
-                    </div>
-                </div>
-            </div>
+
+            <post-component v-for="post in posts" v-bind:post="post" v-bind:key="post.id"></post-component>
+
+            <!-- TODO Conditionally show buttons -->
             <nav class="demo-nav mdl-cell mdl-cell--12-col">
+                <!-- TODO Show if page !== 0 -->
+                <a href="index.html" class="demo-nav__button" title="show newer">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" role="presentation">
+                        <i class="material-icons" role="presentation">arrow_back</i>
+                    </button>
+                    Newer
+                </a>
                 <div class="section-spacer"></div>
-                <a href="entry.html" class="demo-nav__button" title="show more">
-                    More
-                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <!-- TODO Show if page !== totalPages -->
+                <a href="index.html" class="demo-nav__button" title="show older">
+                    Older
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" role="presentation">
                         <i class="material-icons" role="presentation">arrow_forward</i>
                     </button>
                 </a>
@@ -121,7 +89,5 @@
     </main>
 
     <div class="mdl-layout__obfuscator"></div>
-
-    @include('cookieConsent::index')
 </div>
 @endsection
