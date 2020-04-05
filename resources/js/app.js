@@ -27,8 +27,6 @@ window.Vue = require('vue');
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('post-component', require('./components/PostComponent.vue').default);
 
-alert("Before Vue");
-
 /**
  * Intializing Vue
  */
@@ -36,12 +34,58 @@ const app = new Vue({
     el: '#app',
     data: {
         page: 1, 
-        firstPost: (this.page * postsPerPage) - postsPerPage,
-        totalPosts: 3,
-        pages: Math.ceil(this.totalPosts / postsPerPage),
-        posts: [
+        totalPosts: 0,
+        posts: [],
+
+        navigationDisabled: false
+    },
+    computed: {
+        firstPost: function() {
+            return (this.page * postsPerPage) - postsPerPage
+        },
+        pages: function() {
+            return Math.ceil(this.totalPosts / postsPerPage)
+        },
+        // posts: getPosts(firstPost, postsPerPage)
+    },
+    watch: {
+        page: function(newPage, oldPage) {
+            updateList();
+        }
+    },
+    methods: {
+        prevPage: function () {
+            if (this.page > 1) this.page--;
+        },
+        nextPage: function () {
+            if (this.page < this.pages) this.page++;
+        },
+    }
+});
+
+updateList();
+
+function updateList() {
+    app.navigationDisabled = true;
+
+    // Dummy HTTP request
+    setTimeout(() => {
+        result = getPosts(app.firstPost, postsPerPage);
+        app.totalPosts = result.totalPosts;
+        app.posts =  result.posts;
+        app.navigationDisabled = false;
+    }, 1500);
+}
+
+
+function getPosts(offset, count) {
+    alert("The function got called! " + offset);
+    return {
+        totalPosts: 9,
+        posts: 
+        [
             {
-                id: 1,
+                id: offset + 1,
                 subject: "Post One",
                 summary: "This is the first post on this site",
                 overlay: "images/road.jpg",
@@ -55,7 +99,7 @@ const app = new Vue({
                 }
             },
             {
-                id: 2,
+                id: offset + 2,
                 subject: "Post Two",
                 summary: "This is the second post on this site",
                 overlay: "images/road.jpg",
@@ -65,11 +109,11 @@ const app = new Vue({
                 author: {
                     id: 2,
                     name: "Other Guy",
-                    avatar: null,
+                    avatar: "",
                 }
             },
             {
-                id: 3,
+                id: offset + 3,
                 subject: "Post Three",
                 summary: "This is the third post on this site",
                 overlay: "",
@@ -84,4 +128,4 @@ const app = new Vue({
             },
         ]
     }
-});
+}

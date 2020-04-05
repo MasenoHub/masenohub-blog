@@ -49,15 +49,17 @@
             <!-- TODO Conditionally show buttons -->
             <nav class="demo-nav mdl-cell mdl-cell--12-col">
                 <!-- TODO Show if page !== 0 -->
-                <a href="index.html" class="demo-nav__button" title="show newer">
+                <a href="#" class="demo-nav__button" title="show newer" v-show="page !== 1" v-on:click="prevPage" v-bind:disabled="navigationDisabled">
                     <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" role="presentation">
                         <i class="material-icons" role="presentation">arrow_back</i>
                     </button>
                     Newer
                 </a>
+                <!-- TODO Page counter -->
+                <!-- @{{page}} / @{{totalPages}}-->
                 <div class="section-spacer"></div>
                 <!-- TODO Show if page !== totalPages -->
-                <a href="index.html" class="demo-nav__button" title="show older">
+                <a href="#" class="demo-nav__button" title="show older" v-show="page !== pages" v-on:click="nextPage" v-bind:disabled="navigationDisabled">
                     Older
                     <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" role="presentation">
                         <i class="material-icons" role="presentation">arrow_forward</i>
