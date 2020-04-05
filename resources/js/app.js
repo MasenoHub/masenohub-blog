@@ -37,7 +37,8 @@ const app = new Vue({
         totalPosts: 0,
         posts: [],
 
-        navigationDisabled: false
+        navigationDisabled: false,
+        showLoading: false
     },
     computed: {
         firstPost: function() {
@@ -46,7 +47,6 @@ const app = new Vue({
         pages: function() {
             return Math.ceil(this.totalPosts / postsPerPage)
         },
-        // posts: getPosts(firstPost, postsPerPage)
     },
     watch: {
         page: function(newPage, oldPage) {
@@ -67,6 +67,7 @@ updateList();
 
 function updateList() {
     app.navigationDisabled = true;
+    app.showLoading = true;
 
     // Dummy HTTP request
     setTimeout(() => {
@@ -74,12 +75,12 @@ function updateList() {
         app.totalPosts = result.totalPosts;
         app.posts =  result.posts;
         app.navigationDisabled = false;
-    }, 1500);
+        app.showLoading = false;
+    }, 3000);
 }
 
 
 function getPosts(offset, count) {
-    alert("The function got called! " + offset);
     return {
         totalPosts: 9,
         posts: 

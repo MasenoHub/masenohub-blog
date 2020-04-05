@@ -46,22 +46,22 @@
 
             <post-component v-for="post in posts" v-bind:post="post" v-bind:key="post.id"></post-component>
 
-            <!-- TODO Conditionally show buttons -->
             <nav class="demo-nav mdl-cell mdl-cell--12-col">
-                <!-- TODO Show if page !== 0 -->
-                <a href="#" class="demo-nav__button" title="show newer" v-show="page !== 1" v-on:click="prevPage" v-bind:disabled="navigationDisabled">
-                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" role="presentation">
+                <a href="#" v-bind:class="[{ disabled: navigationDisabled, invisible: page === 1}, 'demo-nav__button']" title="show newer" v-on="!navigationDisabled ? { click: prevPage } : {}">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" role="presentation" v-bind:disabled="navigationDisabled">
                         <i class="material-icons" role="presentation">arrow_back</i>
                     </button>
                     Newer
                 </a>
-                <!-- TODO Page counter -->
-                <!-- @{{page}} / @{{totalPages}}-->
+                
                 <div class="section-spacer"></div>
-                <!-- TODO Show if page !== totalPages -->
-                <a href="#" class="demo-nav__button" title="show older" v-show="page !== pages" v-on:click="nextPage" v-bind:disabled="navigationDisabled">
+                <div v-show="showLoading" class="mdl-spinner mdl-js-spinner is-active"></div>
+                <span v-show="!showLoading">@{{page}} / @{{pages}}</span>
+                <div class="section-spacer"></div>
+                
+                <a href="#" v-bind:class="[{ disabled: navigationDisabled, invisible: page === pages}, 'demo-nav__button']" title="show older" v-on="!navigationDisabled ? { click: nextPage } : {}">
                     Older
-                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" role="presentation">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" role="presentation" v-bind:disabled="navigationDisabled">
                         <i class="material-icons" role="presentation">arrow_forward</i>
                     </button>
                 </a>

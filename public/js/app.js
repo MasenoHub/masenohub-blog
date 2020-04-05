@@ -31812,7 +31812,8 @@ var app = new Vue({
     page: 1,
     totalPosts: 0,
     posts: [],
-    navigationDisabled: false
+    navigationDisabled: false,
+    showLoading: false
   },
   computed: {
     firstPost: function firstPost() {
@@ -31820,8 +31821,7 @@ var app = new Vue({
     },
     pages: function pages() {
       return Math.ceil(this.totalPosts / postsPerPage);
-    } // posts: getPosts(firstPost, postsPerPage)
-
+    }
   },
   watch: {
     page: function page(newPage, oldPage) {
@@ -31840,18 +31840,19 @@ var app = new Vue({
 updateList();
 
 function updateList() {
-  app.navigationDisabled = true; // Dummy HTTP request
+  app.navigationDisabled = true;
+  app.showLoading = true; // Dummy HTTP request
 
   setTimeout(function () {
     result = getPosts(app.firstPost, postsPerPage);
     app.totalPosts = result.totalPosts;
     app.posts = result.posts;
     app.navigationDisabled = false;
-  }, 1500);
+    app.showLoading = false;
+  }, 3000);
 }
 
 function getPosts(offset, count) {
-  alert("The function got called! " + offset);
   return {
     totalPosts: 9,
     posts: [{

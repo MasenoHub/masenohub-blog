@@ -241,9 +241,15 @@ body .demo-blog {
   color: white;
   text-decoration: none;
 }
-.demo-blog .demo-blog__posts > .demo-nav .mdl-button {
+.demo-blog .demo-blog__posts > .demo-nav > .demo-nav__button.disabled {
+  color: grey;
+}
+.demo-blog .demo-blog__posts > .demo-nav > .demo-nav__button > .mdl-button {
   color: rgba(0,0,0,0.54);
   background-color: white;
+}
+.demo-blog .demo-blog__posts > .demo-nav > .demo-nav__button.disabled > .mdl-button {
+  background-color: grey;
 }
 .demo-blog .demo-blog__posts > .demo-nav > .demo-nav__button:first-child .mdl-button {
   margin-right: 16px;
