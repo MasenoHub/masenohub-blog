@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index');
+// Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
@@ -24,3 +24,5 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::feeds();
+
+Route::get('/{any}', 'SPAController@index')->where('any', '.*');

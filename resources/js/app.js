@@ -1,7 +1,7 @@
 /**
  * This constant represents the number of posts that should be displayed per page.
  */
-const postsPerPage = 3;
+window.postsPerPage = 3;
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -11,7 +11,24 @@ const postsPerPage = 3;
 
 require('./bootstrap');
 
-window.Vue = require('vue');
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+
+Vue.use(VueRouter);
+
+import App from './views/App';
+import Home from './views/Home';
+
+const router = new VueRouter({
+    mode: 'history',
+    routes: [
+        {
+            path: '/',
+            name: 'home',
+            component: Home
+        },
+    ],
+});
 
 /**
  * The following block of code may be used to automatically register your
@@ -32,101 +49,8 @@ Vue.component('post-component', require('./components/PostComponent.vue').defaul
  */
 const app = new Vue({
     el: '#app',
-    data: {
-        page: 1, 
-        totalPosts: 0,
-        posts: [],
-
-        navigationDisabled: false,
-        showLoading: false
-    },
-    computed: {
-        firstPost: function() {
-            return (this.page * postsPerPage) - postsPerPage
-        },
-        pages: function() {
-            return Math.ceil(this.totalPosts / postsPerPage)
-        },
-    },
-    watch: {
-        page: function(newPage, oldPage) {
-            updateList();
-        }
-    },
-    methods: {
-        prevPage: function () {
-            if (this.page > 1) this.page--;
-        },
-        nextPage: function () {
-            if (this.page < this.pages) this.page++;
-        },
-    }
+    components: {App},
+    router
 });
 
-updateList();
 
-function updateList() {
-    app.navigationDisabled = true;
-    app.showLoading = true;
-
-    // Dummy HTTP request
-    setTimeout(() => {
-        result = getPosts(app.firstPost, postsPerPage);
-        app.totalPosts = result.totalPosts;
-        app.posts =  result.posts;
-        app.navigationDisabled = false;
-        app.showLoading = false;
-    }, 3000);
-}
-
-
-function getPosts(offset, count) {
-    return {
-        totalPosts: 9,
-        posts: 
-        [
-            {
-                id: offset + 1,
-                subject: "Post One",
-                summary: "This is the first post on this site",
-                overlay: "images/road.jpg",
-                owned: true,
-                published: true,
-                created_at: "2020-02-11 20:41:35",
-                author: {
-                    id: 1,
-                    name: "Peter Mghendi",
-                    avatar: "images/avatar.png",
-                }
-            },
-            {
-                id: offset + 2,
-                subject: "Post Two",
-                summary: "This is the second post on this site",
-                overlay: "images/road.jpg",
-                owned: true,
-                published: true,
-                created_at: "2020-02-11 20:41:35",
-                author: {
-                    id: 2,
-                    name: "Other Guy",
-                    avatar: "",
-                }
-            },
-            {
-                id: offset + 3,
-                subject: "Post Three",
-                summary: "This is the third post on this site",
-                overlay: "",
-                owned: true,
-                published: true,
-                created_at: "2020-02-11 20:41:35",
-                author: {
-                    id: 1,
-                    name: "Peter Mghendi",
-                    avatar: "images/avatar.png",
-                }
-            },
-        ]
-    }
-}
