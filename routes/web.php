@@ -19,8 +19,6 @@ Auth::routes();
 
 Route::permanentRedirect('/home', '/')->name('home');
 
-Route::get('/read/{post}', 'PostController@read')->name('read');
-
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
