@@ -103,6 +103,7 @@
             let id = i + 1, owned = Math.random() > .5;
             posts.push({
                 id,
+                slug: "post-" + id,
                 subject: "Post " + id,
                 summary: "This is the post " + id + " on this site",
                 overlay: Math.random() > .5? "images/road.jpg": "",

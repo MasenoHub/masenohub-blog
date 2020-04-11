@@ -9,10 +9,11 @@ import Home from './views/Home';
 import About from './views/About';
 import Message from './views/Message';
 import Auth from './views/Auth';
+import Read from './views/Read';
 
 Vue.use(VueRouter);
 Vue.component('post-component', require('./components/PostComponent.vue').default);
-Vue.component('example-component', require('./components/FooterComponent.vue').default);
+Vue.component('footer-component', require('./components/FooterComponent.vue').default);
 
 const router = new VueRouter({
     mode: 'history',
@@ -37,7 +38,15 @@ const router = new VueRouter({
             name: 'auth',
             component: Auth
         },
+        {
+            path: '/read/:slug',
+            name: 'read',
+            component: Read
+        }
     ],
+    scrollBehavior (to, from, savedPosition) {
+        return savedPosition ? savedPosition :  { x: 0, y: 0 }
+    }
 });
 
 const app = new Vue({

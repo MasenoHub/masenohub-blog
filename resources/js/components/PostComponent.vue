@@ -1,12 +1,12 @@
 <template>
     <!-- TODO: Display ownership, publishing status -->
     <div class="mdl-card mdl-cell mdl-cell--12-col">
-        <div class="mdl-card__title mdl-color-text--grey-50" v-if="!post.overlay" style="background-color: #263238;">
+        <router-link class="mdl-card__title mdl-color-text--grey-50" tag="div" v-bind:to="{ name: 'read', params: { slug: post.slug }}" v-if="!post.overlay" style="background-color: #263238;">
             <h3 class="quote"><a href="entry.html">{{post.subject}}</a></h3>
-        </div>
-        <div class="mdl-card__media mdl-color-text--grey-50" v-else v-bind:style="'background-image: url(' + post.overlay + ')'">
+        </router-link>
+        <router-link class="mdl-card__media mdl-color-text--grey-50" tag="div" v-bind:to="{ name: 'read', params: { slug: post.slug }}" v-else v-bind:style="'background-image: url(' + post.overlay + ')'">
             <h3><a href="entry.html">{{post.subject}}</a></h3>
-        </div>
+        </router-link>
 
         <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
             {{post.summary}}
@@ -23,7 +23,6 @@
 </template>
 
 <script>
-    const defaultAvatar = "images/avatar.png";
     export default {
         props: ['post']
     }
