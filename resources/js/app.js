@@ -20,6 +20,7 @@ import App from './views/App';
 import Home from './views/Home';
 import About from './views/About';
 import Message from './views/Message';
+import Auth from './views/Auth';
 
 const router = new VueRouter({
     mode: 'history',
@@ -38,6 +39,11 @@ const router = new VueRouter({
             path: '/message',
             name: 'message',
             component: Message
+        },
+        {
+            path: '/auth',
+            name: 'auth',
+            component: Auth
         },
     ],
 });
