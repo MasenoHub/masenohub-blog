@@ -1899,6 +1899,41 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FooterComponent.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/FooterComponent.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PostComponent.vue?vue&type=script&lang=js&":
 /*!************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/PostComponent.vue?vue&type=script&lang=js& ***!
@@ -1994,24 +2029,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -2043,24 +2060,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Login */ "./resources/js/views/Login.vue");
 /* harmony import */ var _Register__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Register */ "./resources/js/views/Register.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -2198,66 +2197,43 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+// Overengineered function to fake posts
 function getPosts(offset, count) {
+  var totalPosts = 8;
+  var posts = [];
+  var authors = [{
+    id: 1,
+    name: "Some A. Uthor",
+    avatar: "images/avatar.png"
+  }, {
+    id: 2,
+    name: "Other Guy",
+    avatar: ""
+  }, {
+    id: 3,
+    name: "Yet A. N. Other",
+    avatar: "images/avatar.png"
+  }];
+
+  for (var i = offset; i < offset + count; i++) {
+    if (i >= totalPosts) break;
+    var id = i + 1,
+        owned = Math.random() > .5;
+    posts.push({
+      id: id,
+      subject: "Post " + id,
+      summary: "This is the post " + id + " on this site",
+      overlay: Math.random() > .5 ? "images/road.jpg" : "",
+      owned: owned,
+      published: owned && Math.random() > .5,
+      created_at: "2020-02-11 20:41:35",
+      author: authors[Math.floor(Math.random() * (authors.length - 1))]
+    });
+  }
+
   return {
-    totalPosts: 9,
-    posts: [{
-      id: offset + 1,
-      subject: "Post One",
-      summary: "This is the first post on this site",
-      overlay: "images/road.jpg",
-      owned: true,
-      published: true,
-      created_at: "2020-02-11 20:41:35",
-      author: {
-        id: 1,
-        name: "Peter Mghendi",
-        avatar: "images/avatar.png"
-      }
-    }, {
-      id: offset + 2,
-      subject: "Post Two",
-      summary: "This is the second post on this site",
-      overlay: "images/road.jpg",
-      owned: true,
-      published: true,
-      created_at: "2020-02-11 20:41:35",
-      author: {
-        id: 2,
-        name: "Other Guy",
-        avatar: ""
-      }
-    }, {
-      id: offset + 3,
-      subject: "Post Three",
-      summary: "This is the third post on this site",
-      overlay: "",
-      owned: true,
-      published: true,
-      created_at: "2020-02-11 20:41:35",
-      author: {
-        id: 1,
-        name: "Peter Mghendi",
-        avatar: "images/avatar.png"
-      }
-    }]
+    totalPosts: totalPosts,
+    posts: posts
   };
 }
 
@@ -2362,26 +2338,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -20091,6 +20047,89 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FooterComponent.vue?vue&type=template&id=abfbddf2&":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/FooterComponent.vue?vue&type=template&id=abfbddf2& ***!
+  \******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("footer", { staticClass: "mdl-mini-footer" }, [
+      _c("div", { staticClass: "mdl-mini-footer--left-section" }, [
+        _c(
+          "button",
+          {
+            staticClass:
+              "mdl-mini-footer--social-btn social-btn social-btn__twitter"
+          },
+          [_c("span", { staticClass: "visuallyhidden" }, [_vm._v("Twitter")])]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass:
+              "mdl-mini-footer--social-btn social-btn social-btn__blogger"
+          },
+          [_c("span", { staticClass: "visuallyhidden" }, [_vm._v("Facebook")])]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass:
+              "mdl-mini-footer--social-btn social-btn social-btn__gplus"
+          },
+          [
+            _c("span", { staticClass: "visuallyhidden" }, [
+              _vm._v("Google Plus")
+            ])
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mdl-mini-footer--right-section" }, [
+        _c(
+          "button",
+          { staticClass: "mdl-mini-footer--social-btn social-btn__share" },
+          [
+            _c(
+              "i",
+              {
+                staticClass: "material-icons",
+                attrs: { role: "presentation" }
+              },
+              [_vm._v("share")]
+            ),
+            _vm._v(" "),
+            _c("span", { staticClass: "visuallyhidden" }, [_vm._v("share")])
+          ]
+        )
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PostComponent.vue?vue&type=template&id=54a00d62&":
 /*!****************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/PostComponent.vue?vue&type=template&id=54a00d62& ***!
@@ -20203,41 +20242,46 @@ var render = function() {
         "demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded"
     },
     [
-      _c("main", { staticClass: "mdl-layout__content" }, [
-        _c(
-          "div",
-          { staticClass: "demo-back" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass:
-                  "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon",
-                attrs: {
-                  to: { name: "home" },
-                  title: "go back",
-                  role: "button"
-                }
-              },
-              [
-                _c(
-                  "i",
-                  {
-                    staticClass: "material-icons",
-                    attrs: { role: "presentation" }
-                  },
-                  [_vm._v("arrow_back")]
-                )
-              ]
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _vm._m(0),
-        _vm._v(" "),
-        _vm._m(1)
-      ]),
+      _c(
+        "main",
+        { staticClass: "mdl-layout__content" },
+        [
+          _c(
+            "div",
+            { staticClass: "demo-back" },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass:
+                    "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon",
+                  attrs: {
+                    to: { name: "home" },
+                    title: "go back",
+                    role: "button"
+                  }
+                },
+                [
+                  _c(
+                    "i",
+                    {
+                      staticClass: "material-icons",
+                      attrs: { role: "presentation" }
+                    },
+                    [_vm._v("arrow_back")]
+                  )
+                ]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _vm._m(0),
+          _vm._v(" "),
+          _c("footer-component")
+        ],
+        1
+      ),
       _vm._v(" "),
       _c("div", { staticClass: "mdl-layout__obfuscator" })
     ]
@@ -20318,64 +20362,6 @@ var staticRenderFns = [
         ]
       )
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("footer", { staticClass: "mdl-mini-footer" }, [
-      _c("div", { staticClass: "mdl-mini-footer--left-section" }, [
-        _c(
-          "button",
-          {
-            staticClass:
-              "mdl-mini-footer--social-btn social-btn social-btn__twitter"
-          },
-          [_c("span", { staticClass: "visuallyhidden" }, [_vm._v("Twitter")])]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass:
-              "mdl-mini-footer--social-btn social-btn social-btn__blogger"
-          },
-          [_c("span", { staticClass: "visuallyhidden" }, [_vm._v("Facebook")])]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass:
-              "mdl-mini-footer--social-btn social-btn social-btn__gplus"
-          },
-          [
-            _c("span", { staticClass: "visuallyhidden" }, [
-              _vm._v("Google Plus")
-            ])
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mdl-mini-footer--right-section" }, [
-        _c(
-          "button",
-          { staticClass: "mdl-mini-footer--social-btn social-btn__share" },
-          [
-            _c(
-              "i",
-              {
-                staticClass: "material-icons",
-                attrs: { role: "presentation" }
-              },
-              [_vm._v("share")]
-            ),
-            _vm._v(" "),
-            _c("span", { staticClass: "visuallyhidden" }, [_vm._v("share")])
-          ]
-        )
-      ])
-    ])
   }
 ]
 render._withStripped = true
@@ -20430,110 +20416,118 @@ var render = function() {
         "demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded"
     },
     [
-      _c("main", { staticClass: "mdl-layout__content" }, [
-        _c(
-          "div",
-          { staticClass: "demo-back" },
-          [
+      _c(
+        "main",
+        { staticClass: "mdl-layout__content" },
+        [
+          _c(
+            "div",
+            { staticClass: "demo-back" },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass:
+                    "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon",
+                  attrs: {
+                    to: { name: "home" },
+                    title: "go back",
+                    role: "button"
+                  }
+                },
+                [
+                  _c(
+                    "i",
+                    {
+                      staticClass: "material-icons",
+                      attrs: { role: "presentation" }
+                    },
+                    [_vm._v("arrow_back")]
+                  )
+                ]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "demo-blog__posts mdl-grid" }, [
             _c(
-              "router-link",
+              "div",
               {
                 staticClass:
-                  "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon",
-                attrs: {
-                  to: { name: "home" },
-                  title: "go back",
-                  role: "button"
-                }
+                  "mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col"
               },
               [
                 _c(
-                  "i",
-                  {
-                    staticClass: "material-icons",
-                    attrs: { role: "presentation" }
-                  },
-                  [_vm._v("arrow_back")]
-                )
-              ]
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "demo-blog__posts mdl-grid" }, [
-          _c(
-            "div",
-            {
-              staticClass: "mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col"
-            },
-            [
-              _c(
-                "div",
-                { staticClass: "mdl-card__media mdl-color-text--grey-50" },
-                [_c("h3", [_vm._v(_vm._s(_vm.activeAuthPage))])]
-              ),
-              _vm._v(" "),
-              _vm._m(0),
-              _vm._v(" "),
-              _c("div", { staticStyle: { display: "flex" } }, [
-                _c(
-                  "button",
-                  {
-                    class: [
-                      {
-                        "mdl-button--accent": _vm.activeAuthPage === "Login",
-                        "mdl-button--primary": _vm.activeAuthPage !== "Login"
-                      },
-                      "mdl-button",
-                      "mdl-js-button"
-                    ],
-                    staticStyle: {
-                      "margin-right": "auto",
-                      "margin-left": "auto"
-                    },
-                    on: {
-                      click: function($event) {
-                        _vm.activeAuthPage = "Login"
-                      }
-                    }
-                  },
-                  [_vm._v("Login")]
+                  "div",
+                  { staticClass: "mdl-card__media mdl-color-text--grey-50" },
+                  [_c("h3", [_vm._v(_vm._s(_vm.activeAuthPage))])]
                 ),
                 _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    class: [
-                      {
-                        "mdl-button--accent": _vm.activeAuthPage === "Register",
-                        "mdl-button--primary": _vm.activeAuthPage !== "Register"
+                _vm._m(0),
+                _vm._v(" "),
+                _c("div", { staticStyle: { display: "flex" } }, [
+                  _c(
+                    "button",
+                    {
+                      class: [
+                        {
+                          "mdl-button--accent": _vm.activeAuthPage === "Login",
+                          "mdl-button--primary": _vm.activeAuthPage !== "Login"
+                        },
+                        "mdl-button",
+                        "mdl-js-button"
+                      ],
+                      staticStyle: {
+                        "margin-right": "auto",
+                        "margin-left": "auto"
                       },
-                      "mdl-button",
-                      "mdl-js-button"
-                    ],
-                    staticStyle: {
-                      "margin-right": "auto",
-                      "margin-left": "auto"
-                    },
-                    on: {
-                      click: function($event) {
-                        _vm.activeAuthPage = "Register"
+                      on: {
+                        click: function($event) {
+                          _vm.activeAuthPage = "Login"
+                        }
                       }
-                    }
-                  },
-                  [_vm._v("Register")]
-                )
-              ]),
-              _vm._v(" "),
-              _c(_vm.activeAuthPage, { tag: "component" })
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
-        _vm._m(1)
-      ]),
+                    },
+                    [_vm._v("Login")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      class: [
+                        {
+                          "mdl-button--accent":
+                            _vm.activeAuthPage === "Register",
+                          "mdl-button--primary":
+                            _vm.activeAuthPage !== "Register"
+                        },
+                        "mdl-button",
+                        "mdl-js-button"
+                      ],
+                      staticStyle: {
+                        "margin-right": "auto",
+                        "margin-left": "auto"
+                      },
+                      on: {
+                        click: function($event) {
+                          _vm.activeAuthPage = "Register"
+                        }
+                      }
+                    },
+                    [_vm._v("Register")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c(_vm.activeAuthPage, { tag: "component" })
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c("footer-component")
+        ],
+        1
+      ),
       _vm._v(" "),
       _c("div", { staticClass: "mdl-layout__obfuscator" })
     ]
@@ -20558,64 +20552,6 @@ var staticRenderFns = [
         _c("div", [_c("strong", [_vm._v("The Newist")])])
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("footer", { staticClass: "mdl-mini-footer" }, [
-      _c("div", { staticClass: "mdl-mini-footer--left-section" }, [
-        _c(
-          "button",
-          {
-            staticClass:
-              "mdl-mini-footer--social-btn social-btn social-btn__twitter"
-          },
-          [_c("span", { staticClass: "visuallyhidden" }, [_vm._v("Twitter")])]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass:
-              "mdl-mini-footer--social-btn social-btn social-btn__blogger"
-          },
-          [_c("span", { staticClass: "visuallyhidden" }, [_vm._v("Facebook")])]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass:
-              "mdl-mini-footer--social-btn social-btn social-btn__gplus"
-          },
-          [
-            _c("span", { staticClass: "visuallyhidden" }, [
-              _vm._v("Google Plus")
-            ])
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mdl-mini-footer--right-section" }, [
-        _c(
-          "button",
-          { staticClass: "mdl-mini-footer--social-btn social-btn__share" },
-          [
-            _c(
-              "i",
-              {
-                staticClass: "material-icons",
-                attrs: { role: "presentation" }
-              },
-              [_vm._v("share")]
-            ),
-            _vm._v(" "),
-            _c("span", { staticClass: "visuallyhidden" }, [_vm._v("share")])
-          ]
-        )
-      ])
-    ])
   }
 ]
 render._withStripped = true
@@ -20645,144 +20581,230 @@ var render = function() {
       staticClass: "demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded"
     },
     [
-      _c("main", { staticClass: "mdl-layout__content" }, [
-        _c(
-          "div",
-          { staticClass: "demo-blog__posts mdl-grid" },
-          [
-            _vm._m(0),
-            _vm._v(" "),
-            _vm._m(1),
-            _vm._v(" "),
-            _vm._l(_vm.posts, function(post) {
-              return _c("post-component", {
-                key: post.id,
-                attrs: { post: post }
-              })
-            }),
-            _vm._v(" "),
-            _c("nav", { staticClass: "demo-nav mdl-cell mdl-cell--12-col" }, [
+      _c(
+        "main",
+        { staticClass: "mdl-layout__content" },
+        [
+          _c(
+            "div",
+            { staticClass: "demo-blog__posts mdl-grid" },
+            [
+              _vm._m(0),
+              _vm._v(" "),
               _c(
-                "a",
-                _vm._g(
-                  {
-                    class: [
-                      {
-                        disabled: _vm.navigationDisabled,
-                        invisible: _vm.page === 1
-                      },
-                      "demo-nav__button"
-                    ],
-                    attrs: { href: "#", title: "show newer" }
-                  },
-                  !_vm.navigationDisabled ? { click: _vm.prevPage } : {}
-                ),
+                "div",
+                {
+                  staticClass:
+                    "mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop"
+                },
                 [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _vm._m(2),
+                  _vm._v(" "),
                   _c(
-                    "button",
+                    "div",
                     {
                       staticClass:
-                        "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon",
-                      attrs: {
-                        role: "presentation",
-                        disabled: _vm.navigationDisabled
-                      }
+                        "mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600"
                     },
                     [
+                      _vm._m(3),
+                      _vm._v(" "),
                       _c(
-                        "i",
+                        "ul",
                         {
-                          staticClass: "material-icons",
-                          attrs: { role: "presentation" }
+                          staticClass:
+                            "mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect",
+                          attrs: { for: "menubtn" }
                         },
-                        [_vm._v("arrow_back")]
-                      )
+                        [
+                          _c("li", { staticClass: "mdl-menu__item" }, [
+                            _vm._v("Subscribe")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "router-link",
+                            {
+                              staticClass: "mdl-menu__item",
+                              attrs: {
+                                to: { name: "about" },
+                                tag: "li",
+                                title: "about",
+                                role: "button"
+                              }
+                            },
+                            [_vm._v("About")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "router-link",
+                            {
+                              staticClass: "mdl-menu__item",
+                              attrs: {
+                                to: { name: "message" },
+                                tag: "li",
+                                title: "about",
+                                role: "button"
+                              }
+                            },
+                            [_vm._v("Message")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "router-link",
+                            {
+                              staticClass: "mdl-menu__item",
+                              attrs: {
+                                to: { name: "auth" },
+                                tag: "li",
+                                title: "about",
+                                role: "button"
+                              }
+                            },
+                            [_vm._v("Login/Register")]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _vm._m(4)
                     ]
-                  ),
-                  _vm._v("\r\n                    Newer\r\n                ")
+                  )
                 ]
               ),
               _vm._v(" "),
-              _c("div", { staticClass: "section-spacer" }),
-              _vm._v(" "),
-              _c("div", {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.showLoading,
-                    expression: "showLoading"
-                  }
-                ],
-                staticClass: "mdl-spinner mdl-js-spinner is-active"
+              _vm._l(_vm.posts, function(post) {
+                return _c("post-component", {
+                  key: post.id,
+                  attrs: { post: post }
+                })
               }),
               _vm._v(" "),
-              _c(
-                "span",
-                {
+              _c("nav", { staticClass: "demo-nav mdl-cell mdl-cell--12-col" }, [
+                _c(
+                  "a",
+                  _vm._g(
+                    {
+                      class: [
+                        {
+                          disabled: _vm.navigationDisabled,
+                          invisible: _vm.page === 1
+                        },
+                        "demo-nav__button"
+                      ],
+                      attrs: { href: "#", title: "show newer" }
+                    },
+                    !_vm.navigationDisabled ? { click: _vm.prevPage } : {}
+                  ),
+                  [
+                    _c(
+                      "button",
+                      {
+                        staticClass:
+                          "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon",
+                        attrs: {
+                          role: "presentation",
+                          disabled: _vm.navigationDisabled
+                        }
+                      },
+                      [
+                        _c(
+                          "i",
+                          {
+                            staticClass: "material-icons",
+                            attrs: { role: "presentation" }
+                          },
+                          [_vm._v("arrow_back")]
+                        )
+                      ]
+                    ),
+                    _vm._v("\r\n                    Newer\r\n                ")
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "section-spacer" }),
+                _vm._v(" "),
+                _c("div", {
                   directives: [
                     {
                       name: "show",
                       rawName: "v-show",
-                      value: !_vm.showLoading,
-                      expression: "!showLoading"
+                      value: _vm.showLoading,
+                      expression: "showLoading"
                     }
-                  ]
-                },
-                [_vm._v(_vm._s(_vm.page) + " / " + _vm._s(_vm.pages))]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "section-spacer" }),
-              _vm._v(" "),
-              _c(
-                "a",
-                _vm._g(
+                  ],
+                  staticClass: "mdl-spinner mdl-js-spinner is-active"
+                }),
+                _vm._v(" "),
+                _c(
+                  "span",
                   {
-                    class: [
+                    directives: [
                       {
-                        disabled: _vm.navigationDisabled,
-                        invisible: _vm.page === _vm.pages
-                      },
-                      "demo-nav__button"
-                    ],
-                    attrs: { href: "#", title: "show older" }
-                  },
-                  !_vm.navigationDisabled ? { click: _vm.nextPage } : {}
-                ),
-                [
-                  _vm._v(
-                    "\r\n                    Older\r\n                    "
-                  ),
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon",
-                      attrs: {
-                        role: "presentation",
-                        disabled: _vm.navigationDisabled
+                        name: "show",
+                        rawName: "v-show",
+                        value: !_vm.showLoading,
+                        expression: "!showLoading"
                       }
-                    },
-                    [
-                      _c(
-                        "i",
-                        {
-                          staticClass: "material-icons",
-                          attrs: { role: "presentation" }
-                        },
-                        [_vm._v("arrow_forward")]
-                      )
                     ]
-                  )
-                ]
-              )
-            ])
-          ],
-          2
-        ),
-        _vm._v(" "),
-        _vm._m(2)
-      ]),
+                  },
+                  [_vm._v(_vm._s(_vm.page) + " / " + _vm._s(_vm.pages))]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "section-spacer" }),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  _vm._g(
+                    {
+                      class: [
+                        {
+                          disabled: _vm.navigationDisabled,
+                          invisible: _vm.page === _vm.pages
+                        },
+                        "demo-nav__button"
+                      ],
+                      attrs: { href: "#", title: "show older" }
+                    },
+                    !_vm.navigationDisabled ? { click: _vm.nextPage } : {}
+                  ),
+                  [
+                    _vm._v(
+                      "\r\n                    Older\r\n                    "
+                    ),
+                    _c(
+                      "button",
+                      {
+                        staticClass:
+                          "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon",
+                        attrs: {
+                          role: "presentation",
+                          disabled: _vm.navigationDisabled
+                        }
+                      },
+                      [
+                        _c(
+                          "i",
+                          {
+                            staticClass: "material-icons",
+                            attrs: { role: "presentation" }
+                          },
+                          [_vm._v("arrow_forward")]
+                        )
+                      ]
+                    )
+                  ]
+                )
+              ])
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c("footer-component")
+        ],
+        1
+      ),
       _vm._v(" "),
       _c("div", { staticClass: "mdl-layout__obfuscator" })
     ]
@@ -20830,99 +20852,22 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "div",
+      "button",
       {
         staticClass:
-          "mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop"
+          "mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent"
       },
       [
         _c(
-          "button",
+          "i",
           {
-            staticClass:
-              "mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent"
+            staticClass: "material-icons mdl-color-text--white",
+            attrs: { role: "presentation" }
           },
-          [
-            _c(
-              "i",
-              {
-                staticClass: "material-icons mdl-color-text--white",
-                attrs: { role: "presentation" }
-              },
-              [_vm._v("add")]
-            ),
-            _vm._v(" "),
-            _c("span", { staticClass: "visuallyhidden" }, [_vm._v("add")])
-          ]
+          [_vm._v("add")]
         ),
         _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "mdl-card__media mdl-color--white mdl-color-text--grey-600"
-          },
-          [
-            _c("img", { attrs: { src: "images/logo.png" } }),
-            _vm._v("\r\n                    +1,337\r\n                ")
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600"
-          },
-          [
-            _c("div", [_c("strong", [_vm._v("The Newist")])]),
-            _vm._v(" "),
-            _c(
-              "ul",
-              {
-                staticClass:
-                  "mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect",
-                attrs: { for: "menubtn" }
-              },
-              [
-                _c("li", { staticClass: "mdl-menu__item" }, [_vm._v("About")]),
-                _vm._v(" "),
-                _c("li", { staticClass: "mdl-menu__item" }, [
-                  _vm._v("Message")
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "mdl-menu__item" }, [
-                  _vm._v("Favorite")
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "mdl-menu__item" }, [_vm._v("Search")])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass:
-                  "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon",
-                attrs: { id: "menubtn" }
-              },
-              [
-                _c(
-                  "i",
-                  {
-                    staticClass: "material-icons",
-                    attrs: { role: "presentation" }
-                  },
-                  [_vm._v("more_vert")]
-                ),
-                _vm._v(" "),
-                _c("span", { staticClass: "visuallyhidden" }, [
-                  _vm._v("show menu")
-                ])
-              ]
-            )
-          ]
-        )
+        _c("span", { staticClass: "visuallyhidden" }, [_vm._v("add")])
       ]
     )
   },
@@ -20930,59 +20875,44 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("footer", { staticClass: "mdl-mini-footer" }, [
-      _c("div", { staticClass: "mdl-mini-footer--left-section" }, [
+    return _c(
+      "div",
+      {
+        staticClass: "mdl-card__media mdl-color--white mdl-color-text--grey-600"
+      },
+      [
+        _c("img", { attrs: { src: "images/logo.png" } }),
+        _vm._v("\r\n                    +1,337\r\n                ")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [_c("strong", [_vm._v("The Newist")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass:
+          "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon",
+        attrs: { id: "menubtn" }
+      },
+      [
         _c(
-          "button",
-          {
-            staticClass:
-              "mdl-mini-footer--social-btn social-btn social-btn__twitter"
-          },
-          [_c("span", { staticClass: "visuallyhidden" }, [_vm._v("Twitter")])]
+          "i",
+          { staticClass: "material-icons", attrs: { role: "presentation" } },
+          [_vm._v("more_vert")]
         ),
         _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass:
-              "mdl-mini-footer--social-btn social-btn social-btn__blogger"
-          },
-          [_c("span", { staticClass: "visuallyhidden" }, [_vm._v("Facebook")])]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass:
-              "mdl-mini-footer--social-btn social-btn social-btn__gplus"
-          },
-          [
-            _c("span", { staticClass: "visuallyhidden" }, [
-              _vm._v("Google Plus")
-            ])
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mdl-mini-footer--right-section" }, [
-        _c(
-          "button",
-          { staticClass: "mdl-mini-footer--social-btn social-btn__share" },
-          [
-            _c(
-              "i",
-              {
-                staticClass: "material-icons",
-                attrs: { role: "presentation" }
-              },
-              [_vm._v("share")]
-            ),
-            _vm._v(" "),
-            _c("span", { staticClass: "visuallyhidden" }, [_vm._v("share")])
-          ]
-        )
-      ])
-    ])
+        _c("span", { staticClass: "visuallyhidden" }, [_vm._v("show menu")])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -21118,41 +21048,46 @@ var render = function() {
         "demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded"
     },
     [
-      _c("main", { staticClass: "mdl-layout__content" }, [
-        _c(
-          "div",
-          { staticClass: "demo-back" },
-          [
-            _c(
-              "router-link",
-              {
-                staticClass:
-                  "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon",
-                attrs: {
-                  to: { name: "home" },
-                  title: "go back",
-                  role: "button"
-                }
-              },
-              [
-                _c(
-                  "i",
-                  {
-                    staticClass: "material-icons",
-                    attrs: { role: "presentation" }
-                  },
-                  [_vm._v("arrow_back")]
-                )
-              ]
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _vm._m(0),
-        _vm._v(" "),
-        _vm._m(1)
-      ]),
+      _c(
+        "main",
+        { staticClass: "mdl-layout__content" },
+        [
+          _c(
+            "div",
+            { staticClass: "demo-back" },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass:
+                    "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon",
+                  attrs: {
+                    to: { name: "home" },
+                    title: "go back",
+                    role: "button"
+                  }
+                },
+                [
+                  _c(
+                    "i",
+                    {
+                      staticClass: "material-icons",
+                      attrs: { role: "presentation" }
+                    },
+                    [_vm._v("arrow_back")]
+                  )
+                ]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _vm._m(0),
+          _vm._v(" "),
+          _c("footer-component")
+        ],
+        1
+      ),
       _vm._v(" "),
       _c("div", { staticClass: "mdl-layout__obfuscator" })
     ]
@@ -21204,7 +21139,7 @@ var staticRenderFns = [
             [
               _c("p", [
                 _vm._v(
-                  "\r\n                            Leave a review! We'll try to get back to you as soon as possible. \r\n                        "
+                  "Leave a review! We'll try to get back to you as soon as possible."
                 )
               ]),
               _vm._v(" "),
@@ -21318,64 +21253,6 @@ var staticRenderFns = [
           )
         ]
       )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("footer", { staticClass: "mdl-mini-footer" }, [
-      _c("div", { staticClass: "mdl-mini-footer--left-section" }, [
-        _c(
-          "button",
-          {
-            staticClass:
-              "mdl-mini-footer--social-btn social-btn social-btn__twitter"
-          },
-          [_c("span", { staticClass: "visuallyhidden" }, [_vm._v("Twitter")])]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass:
-              "mdl-mini-footer--social-btn social-btn social-btn__blogger"
-          },
-          [_c("span", { staticClass: "visuallyhidden" }, [_vm._v("Facebook")])]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass:
-              "mdl-mini-footer--social-btn social-btn social-btn__gplus"
-          },
-          [
-            _c("span", { staticClass: "visuallyhidden" }, [
-              _vm._v("Google Plus")
-            ])
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mdl-mini-footer--right-section" }, [
-        _c(
-          "button",
-          { staticClass: "mdl-mini-footer--social-btn social-btn__share" },
-          [
-            _c(
-              "i",
-              {
-                staticClass: "material-icons",
-                attrs: { role: "presentation" }
-              },
-              [_vm._v("share")]
-            ),
-            _vm._v(" "),
-            _c("span", { staticClass: "visuallyhidden" }, [_vm._v("share")])
-          ]
-        )
-      ])
     ])
   }
 ]
@@ -36652,26 +36529,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_About__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/About */ "./resources/js/views/About.vue");
 /* harmony import */ var _views_Message__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/Message */ "./resources/js/views/Message.vue");
 /* harmony import */ var _views_Auth__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/Auth */ "./resources/js/views/Auth.vue");
-/**
- * This constant represents the number of posts that should be displayed per page.
- */
 window.postsPerPage = 3;
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
+
+
+
+
+
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
-
-
-
-
-
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('post-component', __webpack_require__(/*! ./components/PostComponent.vue */ "./resources/js/components/PostComponent.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('example-component', __webpack_require__(/*! ./components/FooterComponent.vue */ "./resources/js/components/FooterComponent.vue")["default"]);
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: 'history',
   routes: [{
@@ -36692,22 +36563,6 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     component: _views_Auth__WEBPACK_IMPORTED_MODULE_6__["default"]
   }]
 });
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('post-component', __webpack_require__(/*! ./components/PostComponent.vue */ "./resources/js/components/PostComponent.vue")["default"]);
-/**
- * Intializing Vue
- */
-
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   components: {
@@ -36726,23 +36581,6 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 /***/ (function(module, exports, __webpack_require__) {
 
 window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/**
- * We'll load jQuery and the Bootstrap jQuery plugin which provides support
- * for JavaScript based Bootstrap features such as modals and tabs. This
- * code may be modified to fit the specific needs of your application.
- */
-
-try {// window.Popper = require('popper.js').default;
-  // window.$ = window.jQuery = require('jquery');
-  // require('bootstrap');
-} catch (e) {}
-/**
- * We'll load the axios HTTP library which allows us to easily issue requests
- * to our Laravel back-end. This library automatically handles sending the
- * CSRF token as a header based on the value of the "XSRF" token cookie.
- */
-
-
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /**
@@ -36758,6 +36596,75 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/FooterComponent.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/FooterComponent.vue ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _FooterComponent_vue_vue_type_template_id_abfbddf2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FooterComponent.vue?vue&type=template&id=abfbddf2& */ "./resources/js/components/FooterComponent.vue?vue&type=template&id=abfbddf2&");
+/* harmony import */ var _FooterComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FooterComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/FooterComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _FooterComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FooterComponent_vue_vue_type_template_id_abfbddf2___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _FooterComponent_vue_vue_type_template_id_abfbddf2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/FooterComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/FooterComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/FooterComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./FooterComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FooterComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/FooterComponent.vue?vue&type=template&id=abfbddf2&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/FooterComponent.vue?vue&type=template&id=abfbddf2& ***!
+  \************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterComponent_vue_vue_type_template_id_abfbddf2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./FooterComponent.vue?vue&type=template&id=abfbddf2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/FooterComponent.vue?vue&type=template&id=abfbddf2&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterComponent_vue_vue_type_template_id_abfbddf2___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterComponent_vue_vue_type_template_id_abfbddf2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 

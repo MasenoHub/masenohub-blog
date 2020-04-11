@@ -29,10 +29,11 @@
                         <strong>The Newist</strong>
                     </div>
                     <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="menubtn">
-                        <li class="mdl-menu__item">About</li>
-                        <li class="mdl-menu__item">Message</li>
-                        <li class="mdl-menu__item">Favorite</li>
-                        <li class="mdl-menu__item">Search</li>
+                        <li class="mdl-menu__item">Subscribe</li>
+                        <router-link :to="{ name: 'about' }" tag="li" class="mdl-menu__item" title="about" role="button">About</router-link>
+                        <router-link :to="{ name: 'message' }" tag="li" class="mdl-menu__item" title="about" role="button">Message</router-link>
+                        <!-- TODO Show logout when authenticated -->
+                        <router-link :to="{ name: 'auth' }" tag="li" class="mdl-menu__item" title="about" role="button">Login/Register</router-link>
                     </ul>
                     <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
                         <i class="material-icons" role="presentation">more_vert</i>
@@ -65,25 +66,7 @@
             </nav>
         </div>
 
-        <footer class="mdl-mini-footer">
-            <div class="mdl-mini-footer--left-section">
-                <button class="mdl-mini-footer--social-btn social-btn social-btn__twitter">
-                    <span class="visuallyhidden">Twitter</span>
-                </button>
-                <button class="mdl-mini-footer--social-btn social-btn social-btn__blogger">
-                    <span class="visuallyhidden">Facebook</span>
-                </button>
-                <button class="mdl-mini-footer--social-btn social-btn social-btn__gplus">
-                    <span class="visuallyhidden">Google Plus</span>
-                </button>
-            </div>
-            <div class="mdl-mini-footer--right-section">
-                <button class="mdl-mini-footer--social-btn social-btn__share">
-                    <i class="material-icons" role="presentation">share</i>
-                    <span class="visuallyhidden">share</span>
-                </button>
-            </div>
-        </footer>
+        <footer-component></footer-component>
     </main>
 
     <div class="mdl-layout__obfuscator"></div>
@@ -91,55 +74,46 @@
 </template>
 
 <script>
+    // Overengineered function to fake posts
     function getPosts(offset, count) {
-        return {
-            totalPosts: 9,
-            posts: 
-            [
-                {
-                    id: offset + 1,
-                    subject: "Post One",
-                    summary: "This is the first post on this site",
-                    overlay: "images/road.jpg",
-                    owned: true,
-                    published: true,
-                    created_at: "2020-02-11 20:41:35",
-                    author: {
-                        id: 1,
-                        name: "Peter Mghendi",
-                        avatar: "images/avatar.png",
-                    }
-                },
-                {
-                    id: offset + 2,
-                    subject: "Post Two",
-                    summary: "This is the second post on this site",
-                    overlay: "images/road.jpg",
-                    owned: true,
-                    published: true,
-                    created_at: "2020-02-11 20:41:35",
-                    author: {
-                        id: 2,
-                        name: "Other Guy",
-                        avatar: "",
-                    }
-                },
-                {
-                    id: offset + 3,
-                    subject: "Post Three",
-                    summary: "This is the third post on this site",
-                    overlay: "",
-                    owned: true,
-                    published: true,
-                    created_at: "2020-02-11 20:41:35",
-                    author: {
-                        id: 1,
-                        name: "Peter Mghendi",
-                        avatar: "images/avatar.png",
-                    }
-                },
-            ]
+        const totalPosts = 8;
+        let posts = [];
+
+        const authors = [
+            {
+                id: 1,
+                name: "Some A. Uthor",
+                avatar: "images/avatar.png",
+            },
+            {
+                id: 2,
+                name: "Other Guy",
+                avatar: "",
+            },
+            {
+                id: 3,
+                name: "Yet A. N. Other",
+                avatar: "images/avatar.png",
+            }
+        ]    
+
+        for(let i = offset; i < offset + count; i++) {
+            if (i >= totalPosts) break;
+
+            let id = i + 1, owned = Math.random() > .5;
+            posts.push({
+                id,
+                subject: "Post " + id,
+                summary: "This is the post " + id + " on this site",
+                overlay: Math.random() > .5? "images/road.jpg": "",
+                owned,
+                published: owned && Math.random() > .5,
+                created_at: "2020-02-11 20:41:35",
+                author: authors[Math.floor(Math.random() * (authors.length - 1))]
+            });
         }
+
+        return {totalPosts, posts}
     }
 
     export default {
