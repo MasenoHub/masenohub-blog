@@ -16,6 +16,7 @@
             </div>
 
             <div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
+                <!-- TODO Show this only for users with 'author' duty -->
                 <button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent">
                     <i class="material-icons mdl-color-text--white" role="presentation">add</i>
                     <span class="visuallyhidden">add</span>
@@ -29,7 +30,7 @@
                         <strong>The Newist</strong>
                     </div>
                     <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="menubtn">
-                        <li class="mdl-menu__item">Subscribe</li>
+                        <li class="mdl-menu__item" v-on:click="showSubscribeDialog">Subscribe</li>
                         <router-link :to="{ name: 'about' }" tag="li" class="mdl-menu__item" title="about" role="button">About</router-link>
                         <router-link :to="{ name: 'message' }" tag="li" class="mdl-menu__item" title="about" role="button">Message</router-link>
                         <!-- TODO Show logout when authenticated -->
@@ -69,11 +70,29 @@
         <footer-component></footer-component>
     </main>
 
+    <dialog id="subscribeDialog" class="mdl-dialog">
+        <h6 class="mdl-dialog__title">Subscribe?</h6>
+        <div class="mdl-dialog__content">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="email" name="email" id="email" required>
+                <label class="mdl-textfield__label" for="email">Your email...</label>
+                <span class="mdl-textfield__error">Enter a valid email address!</span>
+            </div>
+        </div>
+        <div class="mdl-dialog__actions">
+            <button type="submit" class="mdl-button mdl-js-button mdl-button--accent">Subscribe</button>
+            <button type="button" class="mdl-button mdl-js-button mdl-button--primary" 
+            v-on:click="closeSubscribeDialog">Cancel</button>
+        </div>
+  </dialog>
+
     <div class="mdl-layout__obfuscator"></div>
 </div>
 </template>
 
 <script>
+    import dialogPolyfill from 'dialog-polyfill';
+
     // Overengineered function to fake posts
     function getPosts(offset, count) {
         const totalPosts = 8;
@@ -118,14 +137,19 @@
     }
 
     export default {
-        mounted() { this.updateList() },
+        mounted() { 
+            this.updateList();
+            this.dialog = document.querySelector('dialog');
+            if (!this.dialog.showModal) dialogPolyfill.registerDialog(this.dialog);
+        },
         data() {
             return {
                 page: 1, 
-                totalPosts: 0, // TODO Make prop
-                posts: [], // TODO Make prop
+                totalPosts: 0,
+                posts: [],
                 navigationDisabled: false,
-                showLoading: false
+                showLoading: false,
+                dialog: {}
             }
         },
         computed: {
@@ -151,6 +175,12 @@
             nextPage: function () {
                 if (this.page < this.pages) this.page++;
             },
+            showSubscribeDialog: function () {
+                this.dialog.showModal()
+            },
+            closeSubscribeDialog: function () {
+                this.dialog.close()
+            },
             updateList: function() {
                 this.navigationDisabled = true;
                 this.showLoading = true;
@@ -167,3 +197,11 @@
         },
     }
 </script>
+
+<style>
+    dialog {
+    position: fixed;
+    top: 50%;
+    transform: translate(0, -50%);
+    }
+</style>
