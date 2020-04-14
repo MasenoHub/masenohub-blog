@@ -20590,7 +20590,7 @@ var render = function() {
     "div",
     {
       staticClass:
-        "demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded"
+        "blog blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded"
     },
     [
       _c(
@@ -20599,7 +20599,7 @@ var render = function() {
         [
           _c(
             "div",
-            { staticClass: "demo-back" },
+            { staticClass: "blog-back" },
             [
               _c(
                 "router-link",
@@ -20643,7 +20643,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "demo-blog__posts mdl-grid" }, [
+    return _c("div", { staticClass: "blog__posts mdl-grid" }, [
       _c(
         "div",
         { staticClass: "mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col" },
@@ -20764,7 +20764,7 @@ var render = function() {
     "div",
     {
       staticClass:
-        "demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded"
+        "blog blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded"
     },
     [
       _c(
@@ -20773,7 +20773,7 @@ var render = function() {
         [
           _c(
             "div",
-            { staticClass: "demo-back" },
+            { staticClass: "blog-back" },
             [
               _c(
                 "router-link",
@@ -20801,7 +20801,7 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c("div", { staticClass: "demo-blog__posts mdl-grid" }, [
+          _c("div", { staticClass: "blog__posts mdl-grid" }, [
             _c(
               "div",
               {
@@ -20928,9 +20928,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    {
-      staticClass: "demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded"
-    },
+    { staticClass: "blog mdl-layout mdl-js-layout has-drawer is-upgraded" },
     [
       _c(
         "main",
@@ -20938,7 +20936,7 @@ var render = function() {
         [
           _c(
             "div",
-            { staticClass: "demo-blog__posts mdl-grid" },
+            { staticClass: "blog__posts mdl-grid" },
             [
               _vm._m(0),
               _vm._v(" "),
@@ -21032,7 +21030,7 @@ var render = function() {
                 })
               }),
               _vm._v(" "),
-              _c("nav", { staticClass: "demo-nav mdl-cell mdl-cell--12-col" }, [
+              _c("nav", { staticClass: "blog-nav mdl-cell mdl-cell--12-col" }, [
                 _c(
                   "a",
                   _vm._g(
@@ -21042,7 +21040,7 @@ var render = function() {
                           disabled: _vm.navigationDisabled,
                           invisible: _vm.page === 1
                         },
-                        "demo-nav__button"
+                        "blog-nav__button"
                       ],
                       attrs: { href: "#", title: "show newer" }
                     },
@@ -21114,7 +21112,7 @@ var render = function() {
                           disabled: _vm.navigationDisabled,
                           invisible: _vm.page === _vm.pages
                         },
-                        "demo-nav__button"
+                        "blog-nav__button"
                       ],
                       attrs: { href: "#", title: "show older" }
                     },
@@ -21396,7 +21394,7 @@ var render = function() {
     "div",
     {
       staticClass:
-        "demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded"
+        "blog blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded"
     },
     [
       _c(
@@ -21405,7 +21403,7 @@ var render = function() {
         [
           _c(
             "div",
-            { staticClass: "demo-back" },
+            { staticClass: "blog-back" },
             [
               _c(
                 "router-link",
@@ -21449,7 +21447,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "demo-blog__posts mdl-grid" }, [
+    return _c("div", { staticClass: "blog__posts mdl-grid" }, [
       _c(
         "div",
         { staticClass: "mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col" },
@@ -21632,7 +21630,7 @@ var render = function() {
     "div",
     {
       staticClass:
-        "demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded"
+        "blog blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded"
     },
     [
       _vm.showLoading
@@ -21646,7 +21644,7 @@ var render = function() {
             [
               _c(
                 "div",
-                { staticClass: "demo-back" },
+                { staticClass: "blog-back" },
                 [
                   _c(
                     "router-link",
@@ -21674,7 +21672,7 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _c("div", { staticClass: "demo-blog__posts mdl-grid" }, [
+              _c("div", { staticClass: "blog__posts mdl-grid" }, [
                 _c(
                   "div",
                   {
@@ -21838,7 +21836,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "nav",
-                  { staticClass: "demo-nav mdl-cell mdl-cell--12-col" },
+                  { staticClass: "blog-nav mdl-cell mdl-cell--12-col" },
                   [
                     _c(
                       "router-link",
@@ -21848,7 +21846,7 @@ var render = function() {
                             disabled: _vm.navigationDisabled,
                             invisible: !_vm.newerPost
                           },
-                          "demo-nav__button"
+                          "blog-nav__button"
                         ],
                         attrs: {
                           to: { name: "read", params: { slug: _vm.newerPost } },
@@ -21893,7 +21891,7 @@ var render = function() {
                             disabled: _vm.navigationDisabled,
                             invisible: !_vm.olderPost
                           },
-                          "demo-nav__button"
+                          "blog-nav__button"
                         ],
                         attrs: {
                           to: { name: "read", params: { slug: _vm.olderPost } },
@@ -37358,15 +37356,14 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*!******************************************************!*\
   !*** ./resources/js/components/CommentComponent.vue ***!
   \******************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CommentComponent_vue_vue_type_template_id_d6b6866e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CommentComponent.vue?vue&type=template&id=d6b6866e& */ "./resources/js/components/CommentComponent.vue?vue&type=template&id=d6b6866e&");
 /* harmony import */ var _CommentComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CommentComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/CommentComponent.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _CommentComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _CommentComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -37396,7 +37393,7 @@ component.options.__file = "resources/js/components/CommentComponent.vue"
 /*!*******************************************************************************!*\
   !*** ./resources/js/components/CommentComponent.vue?vue&type=script&lang=js& ***!
   \*******************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

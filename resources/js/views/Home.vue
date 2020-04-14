@@ -1,7 +1,7 @@
 <template>
-<div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
+<div class="blog mdl-layout mdl-js-layout has-drawer is-upgraded">
     <main class="mdl-layout__content">
-        <div class="demo-blog__posts mdl-grid">
+        <div class="blog__posts mdl-grid">
             <div class="mdl-card coffee-pic mdl-cell mdl-cell--8-col">
                 <div class="mdl-card__media mdl-color-text--grey-50">
                     <h3><a href="entry.html">Coffee Pic</a></h3>
@@ -44,8 +44,8 @@
 
             <post-component v-for="post in posts" v-bind:post="post" v-bind:key="post.id"></post-component>
 
-            <nav class="demo-nav mdl-cell mdl-cell--12-col">
-                <a href="#" v-bind:class="[{ disabled: navigationDisabled, invisible: page === 1}, 'demo-nav__button']" title="show newer" v-on="!navigationDisabled ? { click: prevPage } : {}">
+            <nav class="blog-nav mdl-cell mdl-cell--12-col">
+                <a href="#" v-bind:class="[{ disabled: navigationDisabled, invisible: page === 1}, 'blog-nav__button']" title="show newer" v-on="!navigationDisabled ? { click: prevPage } : {}">
                     <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" role="presentation" v-bind:disabled="navigationDisabled">
                         <i class="material-icons" role="presentation">arrow_back</i>
                     </button>
@@ -57,7 +57,7 @@
                 <span v-show="!showLoading">{{page}} / {{pages}}</span>
                 <div class="section-spacer"></div>
                 
-                <a href="#" v-bind:class="[{ disabled: navigationDisabled, invisible: page === pages}, 'demo-nav__button']" title="show older" v-on="!navigationDisabled ? { click: nextPage } : {}">
+                <a href="#" v-bind:class="[{ disabled: navigationDisabled, invisible: page === pages}, 'blog-nav__button']" title="show older" v-on="!navigationDisabled ? { click: nextPage } : {}">
                     Older
                     <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" role="presentation" v-bind:disabled="navigationDisabled">
                         <i class="material-icons" role="presentation">arrow_forward</i>

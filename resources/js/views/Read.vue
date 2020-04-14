@@ -1,14 +1,14 @@
 <template>
-    <div class="demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
+    <div class="blog blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
         <div v-if="showLoading" class="mdl-spinner mdl-js-spinner is-active" style="margin: 16px;'"></div>
 
         <main class="mdl-layout__content" v-else>
-            <div class="demo-back">
+            <div class="blog-back">
                 <router-link :to="{ name: 'home' }" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" title="go back" role="button">
                     <i class="material-icons" role="presentation">arrow_back</i>
                 </router-link>
             </div>
-            <div class="demo-blog__posts mdl-grid">
+            <div class="blog__posts mdl-grid">
                 <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
                     <div class="mdl-card__title mdl-color-text--grey-50" v-if="!post.overlay" style="background-color: #263238;">
                         <h3 class="quote">{{post.subject}}</h3>
@@ -55,8 +55,8 @@
                     </div>
                 </div>
 
-                <nav class="demo-nav mdl-cell mdl-cell--12-col">
-                    <router-link v-bind:to="{name: 'read', params: {slug: newerPost}}" v-bind:class="[{ disabled: navigationDisabled, invisible: !newerPost}, 'demo-nav__button']" title="show newer">
+                <nav class="blog-nav mdl-cell mdl-cell--12-col">
+                    <router-link v-bind:to="{name: 'read', params: {slug: newerPost}}" v-bind:class="[{ disabled: navigationDisabled, invisible: !newerPost}, 'blog-nav__button']" title="show newer">
                         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" role="presentation" v-bind:disabled="navigationDisabled">
                             <i class="material-icons" role="presentation">arrow_back</i>
                         </button>
@@ -65,7 +65,7 @@
                     
                     <div class="section-spacer"></div>
                     
-                    <router-link v-bind:to="{name: 'read', params: {slug: olderPost}}" v-bind:class="[{ disabled: navigationDisabled, invisible: !olderPost}, 'demo-nav__button']" title="show older">
+                    <router-link v-bind:to="{name: 'read', params: {slug: olderPost}}" v-bind:class="[{ disabled: navigationDisabled, invisible: !olderPost}, 'blog-nav__button']" title="show older">
                         Older Post
                         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" role="presentation" v-bind:disabled="navigationDisabled">
                             <i class="material-icons" role="presentation">arrow_forward</i>

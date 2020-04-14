@@ -1,13 +1,13 @@
 <template>
-    <div class="demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
+    <div class="blog blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
         <main class="mdl-layout__content">
 
-            <div class="demo-back">
+            <div class="blog-back">
                 <router-link :to="{ name: 'home' }" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" title="go back" role="button">
                     <i class="material-icons" role="presentation">arrow_back</i>
                 </router-link>
             </div>
-            <div class="demo-blog__posts mdl-grid">
+            <div class="blog__posts mdl-grid">
                 <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
                     <div class="mdl-card__media mdl-color-text--grey-50">
                         <h3>About the blog...</h3>
